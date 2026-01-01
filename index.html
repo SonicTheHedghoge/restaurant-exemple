@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dbaretna | Restaurant Tunisien à Djerba</title>
+
+<meta name="description" content="Dbaretna – Restaurant tunisien authentique à Houmet Souk, Djerba. Réservation WhatsApp, cuisine traditionnelle.">
+<meta name="keywords" content="Restaurant Djerba, Cuisine tunisienne, Dbaretna, Houmet Souk">
+<meta name="author" content="Dbaretna">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#caa85a;
+  --dark:#0c0c0c;
+  --soft:#161616;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--dark);
+  color:#fff;
+  scroll-behavior:smooth;
+}
+
+/* LANGUAGE SWITCH */
+.lang{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:999;
+}
+.lang button{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:6px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  margin-left:6px;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+  color:var(--gold);
+}
+.hero p{
+  max-width:700px;
+  margin:25px auto;
+  opacity:.9;
+}
+
+/* SECTIONS */
+section{
+  padding:90px 8%;
+}
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.section-title h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.8rem;
+  color:var(--gold);
+}
+
+/* MENU */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+.menu-card{
+  background:var(--soft);
+  padding:35px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.05);
+  transition:.4s;
+}
+.menu-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--gold);
+}
+.menu-card h3{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:14px;
+  opacity:.85;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+.gallery img{
+  width:100%;
+  border-radius:18px;
+  transition:.4s;
+}
+.gallery img:hover{
+  transform:scale(1.06);
+}
+
+/* ABOUT */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+.about div{
+  background:var(--soft);
+  padding:45px;
+  border-radius:20px;
+}
+
+/* RESERVATION */
+.reservation-form{
+  max-width:600px;
+  margin:0 auto;
+  display:grid;
+  gap:18px;
+}
+.reservation-form input,
+.reservation-form select{
+  padding:14px 18px;
+  border-radius:30px;
+  border:none;
+  outline:none;
+  font-size:.95rem;
+}
+.reservation-form button{
+  background:var(--gold);
+  color:#000;
+  padding:16px;
+  border:none;
+  border-radius:40px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+.reservation-form button:hover{
+  transform:scale(1.05);
+}
+
+/* MAP */
+.map{
+  border-radius:20px;
+  overflow:hidden;
+  border:2px solid var(--gold);
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:#fff;
+  padding:16px 22px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  z-index:999;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:40px;
+  text-align:center;
+  font-size:.9rem;
+  opacity:.8;
+}
+
+@media(max-width:900px){
+  .hero h1{font-size:2.6rem}
+  .about{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LANGUAGE -->
+<div class="lang">
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('ar')">AR</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1 id="title">Dbaretna</h1>
+    <p id="desc">
+      Restaurant tunisien authentique à Houmet Souk, Djerba.
+      Cuisine traditionnelle dans une ambiance chaleureuse.
+    </p>
+  </div>
+</div>
+
+<!-- MENU -->
+<section>
+  <div class="section-title">
+    <h2 id="menuTitle">Notre Menu</h2>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <h3>Entrées</h3>
+      <div class="menu-item"><span>Brik à l'œuf</span><span>6 DT</span></div>
+      <div class="menu-item"><span>Salade Mechouia</span><span>8 DT</span></div>
+    </div>
+    <div class="menu-card">
+      <h3>Plats</h3>
+      <div class="menu-item"><span>Couscous Agneau</span><span>22 DT</span></div>
+      <div class="menu-item"><span>Ojja Fruits de Mer</span><span>25 DT</span></div>
+    </div>
+    <div class="menu-card">
+      <h3>Spécialités</h3>
+      <div class="menu-item"><span>Rouz Jerbi</span><span>24 DT</span></div>
+      <div class="menu-item"><span>Osban</span><span>20 DT</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="section-title">
+    <h2 id="galleryTitle">Galerie</h2>
+  </div>
+  <div class="gallery">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="section-title">
+    <h2 id="aboutTitle">À propos</h2>
+  </div>
+  <div class="about">
+    <div id="aboutText">
+      Dbaretna célèbre la cuisine tunisienne authentique
+      avec des recettes traditionnelles et des produits locaux.
+    </div>
+    <div>
+      📍 Houmet Souk – Djerba<br><br>
+      🕒 12:00 – 15:30<br>
+      19:00 – 23:00
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section>
+  <div class="section-title">
+    <h2>Réservation</h2>
+  </div>
+
+  <form class="reservation-form" onsubmit="sendWhatsApp(event)">
+    <input required placeholder="Nom complet">
+    <input required placeholder="Numéro de téléphone">
+    <input type="date" required>
+    <input type="time" required>
+    <select required>
+      <option value="">Nombre de personnes</option>
+      <option>1</option><option>2</option><option>3</option>
+      <option>4</option><option>5+</option>
+    </select>
+    <button type="submit">Confirmer la réservation</button>
+  </form>
+</section>
+
+<!-- MAP -->
+<section>
+  <div class="section-title">
+    <h2 id="mapTitle">Nous trouver</h2>
+  </div>
+  <div class="map">
+    <iframe src="https://www.google.com/maps?q=Houmet%20Souk%20Djerba&output=embed"
+      width="100%" height="420" style="border:0;" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/21600000000" target="_blank">
+  WhatsApp
+</a>
+
+<footer>
+  © 2025 Dbaretna – Restaurant Tunisien | Djerba
+</footer>
+
+<script>
+const fr={
+ title:"Dbaretna",
+ desc:"Restaurant tunisien authentique à Houmet Souk, Djerba. Cuisine traditionnelle dans une ambiance chaleureuse.",
+ menu:"Notre Menu",
+ gallery:"Galerie",
+ about:"À propos",
+ map:"Nous trouver"
+};
+const ar={
+ title:"دبارتنا",
+ desc:"مطعم تونسي أصيل في حومة السوق جربة. أكلات تقليدية في أجواء دافئة.",
+ menu:"قائمة الطعام",
+ gallery:"المعرض",
+ about:"من نحن",
+ map:"موقعنا"
+};
+function setLang(l){
+ const t=l==="fr"?fr:ar;
+ title.innerText=t.title;
+ desc.innerText=t.desc;
+ menuTitle.innerText=t.menu;
+ galleryTitle.innerText=t.gallery;
+ aboutTitle.innerText=t.about;
+ mapTitle.innerText=t.map;
+ document.body.dir=l==="ar"?"rtl":"ltr";
+}
+function sendWhatsApp(e){
+ e.preventDefault();
+ const f=e.target;
+ const msg=`Réservation Dbaretna:
+Nom: ${f[0].value}
+Téléphone: ${f[1].value}
+Date: ${f[2].value}
+Heure: ${f[3].value}
+Personnes: ${f[4].value}`;
+ window.open("https://wa.me/21600000000?text="+encodeURIComponent(msg),"_blank");
+}
+</script>
+
+</body>
+</html>
