@@ -9,6 +9,7 @@
 <meta name="description" content="Restaurant Baccar – Restaurant tunisien authentique à Houmet Souk, Djerba. Réservation WhatsApp, cuisine traditionnelle.">
 <meta name="keywords" content="Restaurant Djerba, Cuisine tunisienne, Restaurant Baccar , Houmet Souk">
 <meta name="author" content="Restaurant Baccar">
+  
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -27,6 +28,66 @@ body{
   color:#fff;
   scroll-behavior:smooth;
 }
+  .invitation{
+  margin-top:40px;
+  text-align:center;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+.invitation .arabic{
+  font-size:3.2rem;
+  font-weight:600;
+  color:var(--gold);
+  letter-spacing:2px;
+  opacity:0;
+  animation:glowReveal 1.5s ease forwards;
+  animation-delay:.3s;
+}
+
+.invitation .latin{
+  margin-top:10px;
+  font-family:Playfair Display, serif;
+  font-size:1.3rem;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1.2s;
+}
+
+.invitation .meaning{
+  margin-top:8px;
+  font-size:.95rem;
+  opacity:.7;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1.6s;
+}
+
+/* Animations */
+@keyframes glowReveal{
+  0%{
+    opacity:0;
+    letter-spacing:15px;
+    filter:blur(6px);
+  }
+  100%{
+    opacity:1;
+    letter-spacing:2px;
+    filter:blur(0);
+    text-shadow:0 0 25px rgba(201,162,77,.35);
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 
 /* LANGUAGE SWITCH */
 .lang{
@@ -272,6 +333,10 @@ footer{
     <div id="aboutText">
       Restaurant Baccar célèbre la cuisine tunisienne authentique
       avec des recettes traditionnelles et des produits locaux.
+      <div class="invitation">
+  <div class="arabic">ايجو قدانا</div>
+  <div class="latin">Ijo gdena</div>
+  <div class="meaning">Une invitation sincère à partager notre table</div>
     </div>
     <div>
       📍 Houmet Souk – Djerba<br><br>
@@ -363,6 +428,7 @@ Personnes: ${f[4].value}`;
 
 </body>
 </html>
+
 
 
 
