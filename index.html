@@ -179,14 +179,75 @@ footer{background:#000;padding:40px;text-align:center;font-size:.9rem;opacity:.8
       Cuisine traditionnelle dans une ambiance chaleureuse.
     </p>
 
-    <!-- INVITATION -->
-    <div class="invitation">
-      <div class="arabic">ايجو قدانا</div>
-      <div class="latin">Ijo gdena</div>
-      <div class="meaning">Une invitation sincère à partager notre table</div>
-    </div>
-  </div>
+ <!-- INVITATION -->
+<div class="invitation">
+  <div class="arabic" id="arabicText">ايجو قدانا</div>
+  <div class="latin" id="latinText"></div>
+  <div class="meaning" id="meaningText">Une invitation sincère à partager notre table</div>
 </div>
+
+<style>
+.invitation{
+  margin-top:30px;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* Arabic shimmer + wave */
+.invitation .arabic{
+  font-size:3rem;
+  font-weight:700;
+  color:var(--gold);
+  display:inline-block;
+  opacity:0;
+  animation:arabicFade 1.5s forwards;
+}
+
+@keyframes arabicFade{
+  0%{opacity:0; transform:translateY(20px);}
+  30%{opacity:1; transform:translateY(-2px);}
+  50%{transform:translateY(2px);}
+  70%{transform:translateY(-1px);}
+  100%{transform:translateY(0);}
+}
+
+/* Latin typewriter */
+.invitation .latin{
+  font-family: 'Playfair Display', serif;
+  font-size:1.3rem;
+  margin-top:8px;
+  opacity:0;
+  display:inline-block;
+}
+
+/* Meaning fade */
+.invitation .meaning{
+  margin-top:6px;
+  font-size:.95rem;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+</style>
+
+<script>
+// TYPE LATIN TEXT LETTER BY LETTER
+const latinFull = "Ijo gdena";
+const latinEl = document.getElementById("latinText");
+const meaningEl = document.getElementById("meaningText");
+
+let i=0;
+setTimeout(()=>{ // wait for arabic animation
+  latinEl.style.opacity=1;
+  const typer = setInterval(()=>{
+    latinEl.innerHTML += latinFull[i];
+    i++;
+    if(i>=latinFull.length){
+      clearInterval(typer);
+      setTimeout(()=>{meaningEl.style.opacity=1},400); // fade in meaning after typing
+    }
+  },150);
+},1600); // starts after arabicFade
+</script>
 
 <!-- MENU -->
 <section>
@@ -304,3 +365,4 @@ function sendWhatsApp(e){
 
 </body>
 </html>
+
