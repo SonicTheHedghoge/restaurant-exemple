@@ -4,12 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Restaurant Baccar| Restaurant Tunisien à Djerba</title>
-
+<title>Restaurant Baccar | Restaurant Tunisien à Djerba</title>
 <meta name="description" content="Restaurant Baccar – Restaurant tunisien authentique à Houmet Souk, Djerba. Réservation WhatsApp, cuisine traditionnelle.">
-<meta name="keywords" content="Restaurant Djerba, Cuisine tunisienne, Restaurant Baccar , Houmet Souk">
+<meta name="keywords" content="Restaurant Djerba, Cuisine tunisienne, Restaurant Baccar, Houmet Souk">
 <meta name="author" content="Restaurant Baccar">
-  
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -18,83 +16,21 @@
   --gold:#caa85a;
   --dark:#0c0c0c;
   --soft:#161616;
+  --text:#fff;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-
 body{
   font-family:'Poppins',sans-serif;
   background:var(--dark);
-  color:#fff;
+  color:var(--text);
   scroll-behavior:smooth;
 }
-  .invitation{
-  margin-top:40px;
-  text-align:center;
-  animation:fadeUp 1.2s ease forwards;
-}
-
-.invitation .arabic{
-  font-size:3.2rem;
-  font-weight:600;
-  color:var(--gold);
-  letter-spacing:2px;
-  opacity:0;
-  animation:glowReveal 1.5s ease forwards;
-  animation-delay:.3s;
-}
-
-.invitation .latin{
-  margin-top:10px;
-  font-family:Playfair Display, serif;
-  font-size:1.3rem;
-  opacity:0;
-  animation:fadeUp 1s ease forwards;
-  animation-delay:1.2s;
-}
-
-.invitation .meaning{
-  margin-top:8px;
-  font-size:.95rem;
-  opacity:.7;
-  opacity:0;
-  animation:fadeUp 1s ease forwards;
-  animation-delay:1.6s;
-}
-
-/* Animations */
-@keyframes glowReveal{
-  0%{
-    opacity:0;
-    letter-spacing:15px;
-    filter:blur(6px);
-  }
-  100%{
-    opacity:1;
-    letter-spacing:2px;
-    filter:blur(0);
-    text-shadow:0 0 25px rgba(201,162,77,.35);
-  }
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
+a{text-decoration:none;color:inherit}
 
 /* LANGUAGE SWITCH */
 .lang{
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:999;
+  position:fixed;top:20px;right:20px;z-index:999;
 }
 .lang button{
   background:transparent;
@@ -130,19 +66,50 @@ body{
   opacity:.9;
 }
 
-/* SECTIONS */
-section{
-  padding:90px 8%;
-}
-.section-title{
+/* INVITATION */
+.invitation{
+  margin-top:30px;
   text-align:center;
-  margin-bottom:60px;
+  animation:fadeUp 1s ease forwards;
 }
-.section-title h2{
-  font-family:'Playfair Display',serif;
-  font-size:2.8rem;
+.invitation .arabic{
+  font-size:3rem;
+  font-weight:600;
   color:var(--gold);
+  letter-spacing:2px;
+  opacity:0;
+  animation:glowReveal 1.5s ease forwards;
+  animation-delay:.3s;
 }
+.invitation .latin{
+  margin-top:8px;
+  font-family:Playfair Display, serif;
+  font-size:1.2rem;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1.2s;
+}
+.invitation .meaning{
+  margin-top:6px;
+  font-size:.95rem;
+  opacity:.7;
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1.6s;
+}
+@keyframes glowReveal{
+  0%{opacity:0;letter-spacing:15px;filter:blur(6px);}
+  100%{opacity:1;letter-spacing:2px;filter:blur(0);text-shadow:0 0 25px rgba(202,168,90,.35);}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* SECTIONS */
+section{padding:90px 8%}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title h2{font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--gold)}
 
 /* MENU */
 .menu-grid{
@@ -157,113 +124,41 @@ section{
   border:1px solid rgba(255,255,255,.05);
   transition:.4s;
 }
-.menu-card:hover{
-  transform:translateY(-10px);
-  border-color:var(--gold);
-}
-.menu-card h3{
-  font-family:'Playfair Display',serif;
-  color:var(--gold);
-  margin-bottom:20px;
-}
-.menu-item{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:14px;
-  opacity:.85;
-}
+.menu-card:hover{transform:translateY(-10px);border-color:var(--gold);}
+.menu-card h3{font-family:'Playfair Display',serif;color:var(--gold);margin-bottom:20px;}
+.menu-item{display:flex;justify-content:space-between;margin-bottom:14px;opacity:.85;}
 
 /* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:25px;
-}
-.gallery img{
-  width:100%;
-  border-radius:18px;
-  transition:.4s;
-}
-.gallery img:hover{
-  transform:scale(1.06);
-}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;}
+.gallery img{width:100%;border-radius:18px;transition:.4s;}
+.gallery img:hover{transform:scale(1.06);}
 
 /* ABOUT */
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
-.about div{
-  background:var(--soft);
-  padding:45px;
-  border-radius:20px;
-}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.about div{background:var(--soft);padding:45px;border-radius:20px;}
 
 /* RESERVATION */
-.reservation-form{
-  max-width:600px;
-  margin:0 auto;
-  display:grid;
-  gap:18px;
-}
-.reservation-form input,
-.reservation-form select{
-  padding:14px 18px;
-  border-radius:30px;
-  border:none;
-  outline:none;
-  font-size:.95rem;
-}
-.reservation-form button{
-  background:var(--gold);
-  color:#000;
-  padding:16px;
-  border:none;
-  border-radius:40px;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s;
-}
-.reservation-form button:hover{
-  transform:scale(1.05);
-}
+.reservation-form{max-width:600px;margin:0 auto;display:grid;gap:18px}
+.reservation-form input,.reservation-form select{padding:14px 18px;border-radius:30px;border:none;outline:none;font-size:.95rem}
+.reservation-form button{background:var(--gold);color:#000;padding:16px;border:none;border-radius:40px;font-weight:600;cursor:pointer;transition:.3s}
+.reservation-form button:hover{transform:scale(1.05);}
 
 /* MAP */
-.map{
-  border-radius:20px;
-  overflow:hidden;
-  border:2px solid var(--gold);
-}
+.map{border-radius:20px;overflow:hidden;border:2px solid var(--gold)}
 
 /* WHATSAPP FLOAT */
 .whatsapp{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25D366;
-  color:#fff;
-  padding:16px 22px;
-  border-radius:50px;
-  font-weight:600;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-  z-index:999;
+  position:fixed;bottom:25px;right:25px;
+  background:#25D366;color:#fff;padding:16px 22px;
+  border-radius:50px;font-weight:600;text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:999;
 }
 
 /* FOOTER */
-footer{
-  background:#000;
-  padding:40px;
-  text-align:center;
-  font-size:.9rem;
-  opacity:.8;
-}
+footer{background:#000;padding:40px;text-align:center;font-size:.9rem;opacity:.8}
 
-@media(max-width:900px){
-  .hero h1{font-size:2.6rem}
-  .about{grid-template-columns:1fr}
-}
+/* RESPONSIVE */
+@media(max-width:900px){.hero h1{font-size:2.6rem}.about{grid-template-columns:1fr}}
 </style>
 </head>
 
@@ -283,6 +178,13 @@ footer{
       Restaurant tunisien authentique à Houmet Souk, Djerba.
       Cuisine traditionnelle dans une ambiance chaleureuse.
     </p>
+
+    <!-- INVITATION -->
+    <div class="invitation">
+      <div class="arabic">ايجو قدانا</div>
+      <div class="latin">Ijo gdena</div>
+      <div class="meaning">Une invitation sincère à partager notre table</div>
+    </div>
   </div>
 </div>
 
@@ -291,7 +193,6 @@ footer{
   <div class="section-title">
     <h2 id="menuTitle">Notre Menu</h2>
   </div>
-
   <div class="menu-grid">
     <div class="menu-card">
       <h3>Entrées</h3>
@@ -333,10 +234,6 @@ footer{
     <div id="aboutText">
       Restaurant Baccar célèbre la cuisine tunisienne authentique
       avec des recettes traditionnelles et des produits locaux.
-      <div class="invitation">
-  <div class="arabic">ايجو قدانا</div>
-  <div class="latin">Ijo gdena</div>
-  <div class="meaning">Une invitation sincère à partager notre table</div>
     </div>
     <div>
       📍 Houmet Souk – Djerba<br><br>
@@ -348,10 +245,7 @@ footer{
 
 <!-- RESERVATION -->
 <section>
-  <div class="section-title">
-    <h2>Réservation</h2>
-  </div>
-
+  <div class="section-title"><h2>Réservation</h2></div>
   <form class="reservation-form" onsubmit="sendWhatsApp(event)">
     <input required placeholder="Nom complet">
     <input required placeholder="Numéro de téléphone">
@@ -368,9 +262,7 @@ footer{
 
 <!-- MAP -->
 <section>
-  <div class="section-title">
-    <h2 id="mapTitle">Nous trouver</h2>
-  </div>
+  <div class="section-title"><h2 id="mapTitle">Nous trouver</h2></div>
   <div class="map">
     <iframe src="https://www.google.com/maps?q=Houmet%20Souk%20Djerba&output=embed"
       width="100%" height="420" style="border:0;" loading="lazy"></iframe>
@@ -383,54 +275,32 @@ footer{
 </a>
 
 <footer>
-  © 2025 Restaurant Baccar – Restaurant Tunisien | Djerba
+  © 2026 Restaurant Baccar – Restaurant Tunisien | Djerba
 </footer>
 
 <script>
-const fr={
- title:"Restaurant Baccar",
- desc:"Restaurant tunisien authentique à Houmet Souk, Djerba. Cuisine traditionnelle dans une ambiance chaleureuse.",
- menu:"Notre Menu",
- gallery:"Galerie",
- about:"À propos",
- map:"Nous trouver"
-};
-const ar={
- title:"مطعم بكار",
- desc:"مطعم تونسي أصيل في حومة السوق جربة. أكلات تقليدية في أجواء دافئة.",
- menu:"قائمة الطعام",
- gallery:"المعرض",
- about:"من نحن",
- map:"موقعنا"
-};
+// LANGUAGE SWITCH
+const fr={title:"Restaurant Baccar",desc:"Restaurant tunisien authentique à Houmet Souk, Djerba. Cuisine traditionnelle dans une ambiance chaleureuse.",menu:"Notre Menu",gallery:"Galerie",about:"À propos",map:"Nous trouver"};
+const ar={title:"مطعم بكار",desc:"مطعم تونسي أصيل في حومة السوق جربة. أكلات تقليدية في أجواء دافئة.",menu:"قائمة الطعام",gallery:"المعرض",about:"من نحن",map:"موقعنا"};
 function setLang(l){
  const t=l==="fr"?fr:ar;
- title.innerText=t.title;
- desc.innerText=t.desc;
- menuTitle.innerText=t.menu;
- galleryTitle.innerText=t.gallery;
- aboutTitle.innerText=t.about;
- mapTitle.innerText=t.map;
+ document.getElementById("title").innerText=t.title;
+ document.getElementById("desc").innerText=t.desc;
+ document.getElementById("menuTitle").innerText=t.menu;
+ document.getElementById("galleryTitle").innerText=t.gallery;
+ document.getElementById("aboutTitle").innerText=t.about;
+ document.getElementById("mapTitle").innerText=t.map;
  document.body.dir=l==="ar"?"rtl":"ltr";
 }
+
+// RESERVATION WHATSAPP
 function sendWhatsApp(e){
  e.preventDefault();
  const f=e.target;
- const msg=`Réservation Dbaretna:
-Nom: ${f[0].value}
-Téléphone: ${f[1].value}
-Date: ${f[2].value}
-Heure: ${f[3].value}
-Personnes: ${f[4].value}`;
+ const msg=`Réservation Restaurant Baccar:\nNom: ${f[0].value}\nTéléphone: ${f[1].value}\nDate: ${f[2].value}\nHeure: ${f[3].value}\nPersonnes: ${f[4].value}`;
  window.open("https://wa.me/21600000000?text="+encodeURIComponent(msg),"_blank");
 }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
